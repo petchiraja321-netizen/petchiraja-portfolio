@@ -21,7 +21,6 @@ export default function Footer() {
       <div className="pointer-events-none absolute bottom-0 left-1/2 h-[250px] w-[500px] -translate-x-1/2 rounded-full bg-[var(--primary)]/[0.025] blur-[100px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-12 lg:px-8">
-
         <Reveal>
           <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
 
@@ -31,8 +30,7 @@ export default function Footer() {
                 href="#home"
                 className="group inline-flex items-center gap-2"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--card)] transition-all duration-300 group-hover:border-[var(--primary)]/50 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.1)]"
-                >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--card)] transition-all duration-300 group-hover:border-[var(--primary)]/50 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.1)]">
                   <Code2
                     size={17}
                     className="text-[var(--primary)] transition-transform duration-300 group-hover:scale-110"
@@ -40,7 +38,7 @@ export default function Footer() {
                 </div>
 
                 <span className="font-mono text-sm font-semibold tracking-wide text-[var(--foreground)]">
-                  PETCHI
+                  PETCHIRaja
                   <span className="text-[var(--primary)]">.DEV</span>
                 </span>
               </a>
@@ -55,7 +53,7 @@ export default function Footer() {
 
               {/* GitHub */}
               <a
-                href="#"
+                href="https://github.com/petchiraja321-netizen"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -72,7 +70,7 @@ export default function Footer() {
 
               {/* LinkedIn */}
               <a
-                href="#"
+                href="https://linkedin.com/in/petchiraja-s-29a72431a"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -114,14 +112,12 @@ export default function Footer() {
                   className="transition-transform duration-300 group-hover:-translate-y-0.5"
                 />
               </a>
-
             </div>
           </div>
         </Reveal>
 
         {/* Bottom Divider */}
         <div className="mt-10 border-t border-[var(--border)] pt-6">
-
           <div className="flex flex-col gap-3 text-[10px] sm:flex-row sm:items-center sm:justify-between">
 
             <p className="font-mono text-[var(--muted)]">
@@ -140,7 +136,6 @@ export default function Footer() {
 
           </div>
         </div>
-
       </div>
     </footer>
   );
