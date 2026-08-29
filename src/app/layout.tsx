@@ -14,11 +14,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Petchiraja | AI · Data Science · Software",
+
   description:
     "Petchiraja's portfolio — building intelligent systems across AI, machine learning, data science, software development, and cloud-native AI.",
+
+  verification: {
+    google: "MuQXvYfVy23uD9FzPvti3u5vjvozH85J8NBLo9oQ_d4",
+  },
+
   icons: {
     icon: "/pr-logo.png",
   },
+
   keywords: [
     "Petchiraja",
     "AI",
@@ -32,7 +39,11 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
