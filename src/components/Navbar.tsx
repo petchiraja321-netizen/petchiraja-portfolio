@@ -100,7 +100,7 @@ export default function Navbar() {
             </p>
 
             <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-[var(--muted)]">
-              AI/ML· Data · Software
+              AI/ML· Data · Software Development
             </p>
           </div>
         </button>

@@ -1,26 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import CursorGlow from "@/components/CursorGlow";
 
 export const metadata: Metadata = {
   title: "Petchiraja | AI · Data Science · Software",
 
   description:
     "Petchiraja's portfolio — building intelligent systems across AI, machine learning, data science, software development, and cloud-native AI.",
-
-  verification: {
-    google: "MuQXvYfVy23uD9FzPvti3u5vjvozH85J8NBLo9oQ_d4",
-  },
 
   icons: {
     icon: "/pr-logo.png",
@@ -41,15 +27,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className="h-full antialiased">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="MuQXvYfVy23uD9FzPvti3u5vjvozH85J8NBLo9oQ_d4"
+        />
+      </head>
+
+      <body className="min-h-full flex flex-col">
+        <CursorGlow />
+        {children}
+      </body>
     </html>
   );
 }

@@ -5,35 +5,87 @@ import {
   CalendarDays,
   ArrowUpRight,
 } from "lucide-react";
-import Reveal from "./Reveal";
+
+import SectionReveal from "./SectionReveal";
 
 const experiences = [
   {
     year: "2026",
-    company: "Edgeup",
-    role: "Intern",
-    duration: "3 Months",
+    company: "Edgeup Edutech",
+    role: "ML Developer Intern",
+    duration: "Aug 2026 – Oct 2026",
     description:
-      "Worked in a practical development environment, contributing to assigned technical tasks and gaining hands-on exposure to professional software workflows.",
-    skills: ["Development", "Problem Solving", "Team Collaboration"],
+      "Developed Python-based machine learning solutions through data preprocessing, exploratory analysis, and practical ML techniques while gaining hands-on experience in real-world AI application development.",
+    skills: [
+      "Python",
+      "Machine Learning",
+      "Data Preprocessing",
+      "EDA",
+      "PyTorch",
+    ],
   },
+
   {
     year: "2026",
     company: "Cognifyz IT Solutions",
     role: "Machine Learning Intern",
     duration: "Jul 2026 – Aug 2026",
     description:
-      "Worked on machine learning tasks including exploratory data analysis, data preprocessing, model experimentation, and evaluation using Python.",
-    skills: ["Python", "Pandas", "NumPy", "Scikit-learn", "EDA"],
+      "Performed data preprocessing, exploratory analysis, and machine learning experimentation using Python to identify meaningful patterns and apply machine learning concepts to practical data science tasks.",
+    skills: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "EDA",
+    ],
   },
+
+  {
+    year: "2026",
+    company: "Imarticus Learning",
+    role: "Data Analyst Intern",
+    duration: "Jun 2026 – Jul 2026",
+    description:
+      "Performed data cleaning, transformation, and exploratory analysis using Python, SQL, and Pandas to identify trends, generate insights, and support data-driven decision-making through visualization.",
+    skills: [
+      "Python",
+      "SQL",
+      "Pandas",
+      "Data Analysis",
+      "Data Visualization",
+    ],
+  },
+
+  {
+    year: "2026",
+    company: "Greens Technology",
+    role: "Data Analyst Intern",
+    duration: "Apr 2026 – May 2026",
+    description:
+      "Performed data cleaning, preprocessing, and exploratory analysis using Python, Pandas, and NumPy to identify trends and generate meaningful insights through data visualization and analytical reporting.",
+    skills: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Data Cleaning",
+      "EDA",
+    ],
+  },
+
   {
     year: "2026",
     company: "Turerz",
     role: "Prompt Engineering Intern",
-    duration: "6 Months",
+    duration: "Feb 2026 – Mar 2026",
     description:
-      "Worked on prompt engineering tasks and explored practical applications of generative AI and large language models.",
-    skills: ["Prompt Engineering", "Generative AI", "LLMs"],
+      "Worked on prompt engineering tasks and explored practical applications of generative AI and large language models to improve AI-assisted workflows and support solution development.",
+    skills: [
+      "Prompt Engineering",
+      "Generative AI",
+      "LLMs",
+      "AI Workflows",
+    ],
   },
 ];
 
@@ -46,8 +98,10 @@ export default function Experience() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Header */}
-        <Reveal>
+        <SectionReveal>
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+
+            {/* Side Label */}
             <div>
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 bg-[var(--primary)]" />
@@ -58,6 +112,7 @@ export default function Experience() {
               </div>
             </div>
 
+            {/* Main Heading */}
             <div>
               <h2 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                 Where I&apos;ve{" "}
@@ -67,13 +122,13 @@ export default function Experience() {
               </h2>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--muted)] sm:text-lg">
-                Practical experiences that helped me develop technical skills,
-                problem-solving ability, and an understanding of real-world
-                development workflows.
+                Hands-on industry experiences across machine learning,
+                data analytics, prompt engineering, and software development.
               </p>
             </div>
+
           </div>
-        </Reveal>
+        </SectionReveal>
 
         {/* Timeline */}
         <div className="relative mt-16">
@@ -82,9 +137,10 @@ export default function Experience() {
           <div className="absolute left-[11px] top-2 hidden h-[calc(100%-16px)] w-px bg-[var(--border)] sm:block" />
 
           <div className="space-y-10">
+
             {experiences.map((experience, index) => (
-              <Reveal
-                key={experience.company}
+              <SectionReveal
+                key={`${experience.company}-${experience.role}`}
                 delay={index * 0.1}
               >
                 <article className="relative sm:pl-12">
@@ -101,7 +157,10 @@ export default function Experience() {
 
                       {/* Company Info */}
                       <div>
+
+                        {/* Year + Duration */}
                         <div className="flex flex-wrap items-center gap-3">
+
                           <span className="font-mono text-xs text-[var(--primary)]">
                             {experience.year}
                           </span>
@@ -111,24 +170,31 @@ export default function Experience() {
                           <span className="font-mono text-xs text-[var(--muted)]">
                             {experience.duration}
                           </span>
+
                         </div>
 
+                        {/* Company */}
                         <h3 className="mt-4 text-2xl font-semibold text-[var(--foreground)]">
                           {experience.company}
                         </h3>
 
+                        {/* Role */}
                         <p className="mt-1 text-sm text-[var(--primary)]">
                           {experience.role}
                         </p>
+
                       </div>
 
-                      {/* Icon */}
+                      {/* Experience Icon */}
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--section)] transition-colors group-hover:border-[var(--primary)]/40">
+
                         <BriefcaseBusiness
                           size={19}
                           className="text-[var(--primary)]"
                         />
+
                       </div>
+
                     </div>
 
                     {/* Description */}
@@ -138,6 +204,7 @@ export default function Experience() {
 
                     {/* Skills */}
                     <div className="mt-6 flex flex-wrap gap-2">
+
                       {experience.skills.map((skill) => (
                         <span
                           key={skill}
@@ -146,25 +213,29 @@ export default function Experience() {
                           {skill}
                         </span>
                       ))}
+
                     </div>
 
-                    {/* Hover Line */}
+                    {/* Bottom Hover Line */}
                     <div className="pointer-events-none mt-6 h-px w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-full" />
 
                   </div>
                 </article>
-              </Reveal>
+              </SectionReveal>
             ))}
+
           </div>
         </div>
 
         {/* Resume CTA */}
-        <Reveal delay={0.15}>
+        <SectionReveal delay={0.15}>
           <div className="mt-12">
+
             <a
               href="/resume"
               className="group inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--card)] px-5 py-3 font-mono text-xs text-[var(--foreground)] transition-all hover:border-[var(--primary)]/50 hover:text-[var(--primary)]"
             >
+
               <CalendarDays size={15} />
 
               View Full Resume
@@ -173,9 +244,11 @@ export default function Experience() {
                 size={14}
                 className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
               />
+
             </a>
+
           </div>
-        </Reveal>
+        </SectionReveal>
 
       </div>
     </section>

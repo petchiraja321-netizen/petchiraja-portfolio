@@ -7,10 +7,11 @@ import {
   BarChart3,
   Container,
   GitBranch,
+  Waypoints,
   Globe,
-  Layers3,
 } from "lucide-react";
-import Reveal from "./Reveal";
+
+import SectionReveal from "./SectionReveal";
 
 const skillGroups = [
   {
@@ -28,6 +29,7 @@ const skillGroups = [
       "NumPy",
     ],
   },
+
   {
     number: "02",
     title: "Data Science",
@@ -40,9 +42,12 @@ const skillGroups = [
       "Data Visualization",
       "Jupyter",
       "Power BI",
+      "Tableau",
+      "MS Excel",
       "R",
     ],
   },
+
   {
     number: "03",
     title: "Software Development",
@@ -58,6 +63,7 @@ const skillGroups = [
       "REST APIs",
     ],
   },
+
   {
     number: "04",
     title: "Databases",
@@ -71,6 +77,7 @@ const skillGroups = [
       "CRUD Operations",
     ],
   },
+
   {
     number: "05",
     title: "Cloud & DevOps",
@@ -84,6 +91,7 @@ const skillGroups = [
       "Deployment",
     ],
   },
+
   {
     number: "06",
     title: "Tools & Workflow",
@@ -97,6 +105,53 @@ const skillGroups = [
       "Git Workflow",
     ],
   },
+
+  {
+    number: "07",
+    title: "AI-Assisted Development",
+    icon: Code2,
+    description:
+      "Accelerating software development through AI-assisted coding, rapid prototyping, and iterative problem-solving.",
+    skills: [
+      "Claude Code",
+      "GitHub Copilot",
+      "OpenAI Codex",
+      "Prompt Engineering",
+      "Rapid Prototyping",
+    ],
+  },
+
+  {
+    number: "08",
+    title: "Data Structures & Algorithms",
+    icon: Waypoints,
+    description:
+      "Applying core data structures and algorithmic thinking to design efficient, scalable, and maintainable solutions.",
+    skills: [
+      "Data Structures",
+      "Algorithms",
+      "Problem Solving",
+      "Sorting & Searching",
+      "Trees & Graphs",
+      "Complexity Analysis",
+    ],
+  },
+
+  {
+    number: "09",
+    title: "Computer Networks",
+    icon: Globe,
+    description:
+      "Understanding how applications communicate through networks, protocols, and client–server systems.",
+    skills: [
+      "TCP/IP",
+      "HTTP / HTTPS",
+      "DNS",
+      "Client–Server Architecture",
+      "REST Communication",
+      "Network Fundamentals",
+    ],
+  },
 ];
 
 export default function Skills() {
@@ -105,42 +160,44 @@ export default function Skills() {
       id="skills"
       className="relative overflow-hidden border-t border-[var(--border)]/60 bg-[var(--background)] py-24 sm:py-32"
     >
-      {/* Background glow */}
+      {/* Background Glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/3 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[var(--primary)]/[0.025] blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Section Header */}
-        <Reveal>
+        <SectionReveal>
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
 
+            {/* Side Label */}
             <div>
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 shrink-0 bg-[var(--primary)]" />
 
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--primary)] sm:text-xs">
+                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--primary)] sm:text-xs">
                   Technical Stack
                 </span>
               </div>
             </div>
 
+            {/* Main Heading */}
             <div>
-              <h2 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-                Tools I use to{" "}
+              <h2 className="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+                Technologies I use to turn data and ideas into{" "}
                 <span className="text-[var(--primary)]">
-                  build.
+                  working systems.
                 </span>
               </h2>
 
               <p className="mt-6 max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-lg sm:leading-8">
-                A practical technology stack spanning artificial intelligence,
+                A practical technology stack spanning artificial intelligence, data science, algorithms, software development, databases, computer networks, AI-assisted development, and cloud-native systems.
                 data science, software development, databases, and
                 cloud-native systems.
               </p>
             </div>
 
           </div>
-        </Reveal>
+        </SectionReveal>
 
         {/* Skill Groups */}
         <div className="mt-14 grid gap-4 sm:mt-16 md:grid-cols-2 lg:grid-cols-3">
@@ -149,21 +206,19 @@ export default function Skills() {
             const Icon = group.icon;
 
             return (
-              <Reveal
+              <SectionReveal
                 key={group.number}
                 delay={index * 0.07}
               >
-                <article
-                  className="group relative h-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/60 hover:shadow-[0_15px_45px_rgba(0,0,0,0.25)] sm:p-7"
-                >
+                <article className="group relative h-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/60 hover:shadow-[0_15px_45px_rgba(0,0,0,0.25)] sm:p-7">
 
-                  {/* Number */}
+                  {/* Card Top */}
                   <div className="flex items-start justify-between">
 
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--section)] transition-all duration-300 group-hover:border-[var(--primary)]/50 group-hover:bg-[var(--primary)]/[0.06]">
                       <Icon
                         size={19}
-                        className="text-[var(--primary)]"
+                        className="text-[var(--primary)] transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
 
@@ -174,7 +229,7 @@ export default function Skills() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="mt-6 text-lg font-semibold leading-snug text-[var(--foreground)]">
+                  <h3 className="mt-6 text-lg font-semibold leading-snug text-[var(--foreground)] transition-colors duration-300 group-hover:text-[var(--primary)]">
                     {group.title}
                   </h3>
 
@@ -197,69 +252,15 @@ export default function Skills() {
 
                   </div>
 
-                  {/* Bottom Glow Line */}
-                  <div className="absolute bottom-0 left-0 h-px w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-full" />
+                  {/* Bottom Hover Line */}
+                  <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-full" />
 
                 </article>
-              </Reveal>
+              </SectionReveal>
             );
           })}
 
         </div>
-
-        {/* Stack Footer */}
-        <Reveal delay={0.15}>
-          <div className="mt-10 flex flex-col gap-5 rounded-2xl border border-[var(--border)] bg-[var(--card)]/50 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-
-            {/* Left */}
-            <div className="flex items-center gap-3">
-
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--section)]">
-                <Layers3
-                  size={17}
-                  className="text-[var(--primary)]"
-                />
-              </div>
-
-              <div>
-                <p className="font-mono text-xs text-[var(--foreground)]">
-                  Full-stack thinking
-                </p>
-
-                <p className="mt-1 text-[10px] text-[var(--muted)]">
-                  AI → Data → Software → Cloud
-                </p>
-              </div>
-
-            </div>
-
-            {/* Right */}
-            <div className="flex flex-wrap gap-x-5 gap-y-3 font-mono text-[10px] uppercase tracking-wider text-[var(--muted)]">
-
-              <span className="flex items-center gap-1.5">
-                <BrainCircuit size={12} />
-                AI
-              </span>
-
-              <span className="flex items-center gap-1.5">
-                <BarChart3 size={12} />
-                Data
-              </span>
-
-              <span className="flex items-center gap-1.5">
-                <Globe size={12} />
-                Web
-              </span>
-
-              <span className="flex items-center gap-1.5">
-                <Container size={12} />
-                Cloud
-              </span>
-
-            </div>
-
-          </div>
-        </Reveal>
 
       </div>
     </section>

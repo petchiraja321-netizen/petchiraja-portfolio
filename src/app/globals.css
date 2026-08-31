@@ -3,17 +3,27 @@
 @import "tailwindcss";
 
 :root {
+  /* Main website background */
   --background: #07111F;
-  --section: #0D1B2A;
+
+  /* All sections use the SAME dark background */
+  --section: #07111F;
+
+  /* Cards are slightly lighter for visual depth */
   --card: #12263A;
 
+  /* Main text */
   --foreground: #F1F5F9;
   --muted: #94A3B8;
 
+  /* Primary accent */
   --primary: #22C55E;
   --primary-hover: #4ADE80;
 
+  /* Borders */
   --border: #1E3A4C;
+
+  /* Warning */
   --warning: #F59E0B;
 }
 
@@ -23,10 +33,12 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--background);
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
   font-family: "Inter", sans-serif;
@@ -57,6 +69,7 @@ a {
   color: #07111F;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -72,4 +85,9 @@ a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
+}
+
+/* Keep every section visually connected */
+section {
+  background-color: var(--background);
 }

@@ -38,7 +38,7 @@ export default function Footer() {
                 </div>
 
                 <span className="font-mono text-sm font-semibold tracking-wide text-[var(--foreground)]">
-                  PETCHIRaja
+                  PETCHIRAJA
                   <span className="text-[var(--primary)]">.DEV</span>
                 </span>
               </a>

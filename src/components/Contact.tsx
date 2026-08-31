@@ -12,15 +12,15 @@ import Reveal from "./Reveal";
 const contacts = [
   {
     icon: Code2,
-    label: "Github",
+    label: "GitHub",
     value: "View my repositories",
-    href: "https://github.com/petchiraja321-netizen"
+    href: "https://github.com/petchiraja321-netizen",
   },
   {
     icon: Link,
     label: "LinkedIn",
     value: "Connect professionally",
-    href: "https://linkedin.com/in/petchiraja-s-29a72431a"
+    href: "https://linkedin.com/in/petchiraja-s-29a72431",
   },
 ];
 
@@ -37,11 +37,9 @@ export default function Contact() {
       <div className="pointer-events-none absolute left-1/2 top-1/3 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-[var(--primary)]/[0.035] blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-
         {/* Header */}
         <Reveal>
           <div className="mx-auto max-w-4xl text-center">
-
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-10 bg-[var(--primary)]" />
 
@@ -55,16 +53,15 @@ export default function Contact() {
             <h2 className="mt-7 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-7xl">
               Have a problem
               <br />
-
               <span className="text-[var(--primary)]">
                 worth solving?
               </span>
             </h2>
 
             <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-[var(--muted)] sm:text-lg">
-              I&apos;m interested in opportunities where I can build intelligent
-              systems, solve meaningful problems, and grow as a software and AI
-              engineer.
+              I&apos;m interested in opportunities where I can build
+              intelligent systems, solve meaningful problems, and grow as a
+              software and AI engineer.
             </p>
 
             {/* Email CTA */}
@@ -89,7 +86,6 @@ export default function Contact() {
 
         {/* Contact Cards */}
         <div className="mx-auto mt-16 grid max-w-4xl gap-4 md:grid-cols-2">
-
           {contacts.map((contact, index) => {
             const Icon = contact.icon;
 
@@ -105,9 +101,7 @@ export default function Contact() {
                   className="group relative block overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/60 hover:shadow-[0_16px_45px_rgba(34,197,94,0.07)]"
                 >
                   <div className="flex items-center justify-between">
-
                     <div className="flex items-center gap-4">
-
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--section)] transition-all duration-300 group-hover:border-[var(--primary)]/50 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.1)]">
                         <Icon
                           size={19}
@@ -124,31 +118,26 @@ export default function Contact() {
                           {contact.value}
                         </p>
                       </div>
-
                     </div>
 
                     <ArrowUpRight
                       size={17}
                       className="text-[var(--muted)] transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[var(--primary)]"
                     />
-
                   </div>
 
                   {/* Bottom Hover Line */}
-                  <div className="absolute bottom-0 left-0 h-px w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-full" />
+                  <div className="pointer-events-none absolute bottom-0 left-0 h-px w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-full" />
                 </a>
               </Reveal>
             );
           })}
-
         </div>
 
         {/* Availability */}
         <Reveal delay={0.2}>
           <div className="mx-auto mt-8 flex max-w-4xl flex-col items-center justify-between gap-4 rounded-2xl border border-[var(--border)] bg-[var(--card)]/50 px-6 py-5 transition-all duration-300 hover:border-[var(--primary)]/30 sm:flex-row">
-
             <div className="flex items-center gap-3">
-
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--primary)] opacity-50" />
 
@@ -158,18 +147,14 @@ export default function Contact() {
               <span className="font-mono text-xs text-[var(--foreground)]">
                 Open to opportunities
               </span>
-
             </div>
 
             <div className="flex items-center gap-2 font-mono text-xs text-[var(--muted)]">
               <MapPin size={14} />
-
               Chennai, India
             </div>
-
           </div>
         </Reveal>
-
       </div>
     </section>
   );

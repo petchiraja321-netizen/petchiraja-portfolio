@@ -7,7 +7,7 @@ import {
   Code2,
   ArrowUpRight,
 } from "lucide-react";
-import Reveal from "./Reveal";
+import SectionReveal from "./SectionReveal";
 
 const capabilities = [
   {
@@ -47,23 +47,20 @@ export default function About() {
       className="relative border-t border-[var(--border)]/60 bg-[var(--section)] py-24 sm:py-32"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
-        {/* Section Header */}
-        <Reveal>
+        <SectionReveal>
           <div className="mb-16 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-
-            {/* Label */}
+            {/* Side Heading */}
             <div>
               <div className="flex items-center gap-3">
                 <span className="h-px w-10 bg-[var(--primary)]" />
 
                 <span className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--primary)]">
-                  About / Profile
+                  About
                 </span>
               </div>
             </div>
 
-            {/* Main Content */}
+            {/* Main Heading */}
             <div>
               <h2 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                 I build systems,
@@ -82,18 +79,18 @@ export default function About() {
 
               <a
                 href="#projects"
-                className="group mt-7 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[var(--foreground)] transition-colors hover:text-[var(--primary)]"
+                className="group mt-7 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[var(--foreground)] transition-colors duration-300 hover:text-[var(--primary)]"
               >
-                Explore my work
+                View Projects
 
                 <ArrowUpRight
                   size={15}
-                  className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 />
               </a>
             </div>
           </div>
-        </Reveal>
+        </SectionReveal>
 
         {/* Capability Cards */}
         <div className="grid gap-4 md:grid-cols-2">
@@ -101,19 +98,17 @@ export default function About() {
             const Icon = item.icon;
 
             return (
-              <Reveal
+              <SectionReveal
                 key={item.number}
                 delay={index * 0.08}
               >
-                <article
-                  className="group h-full rounded-2xl border border-[var(--border)] bg-[var(--card)] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/50 hover:shadow-[0_12px_40px_rgba(0,0,0,0.2)] sm:p-8"
-                >
-                  {/* Card Top */}
+                <article className="group relative h-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/50 hover:shadow-[0_12px_40px_rgba(0,0,0,0.2)] sm:p-8">
+                  {/* Top */}
                   <div className="flex items-start justify-between">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--section)] transition-colors group-hover:border-[var(--primary)]/40">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--section)] transition-all duration-300 group-hover:border-[var(--primary)]/50 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.08)]">
                       <Icon
                         size={20}
-                        className="text-[var(--primary)]"
+                        className="text-[var(--primary)] transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
 
@@ -122,20 +117,22 @@ export default function About() {
                     </span>
                   </div>
 
-                  {/* Card Content */}
-                  <h3 className="mt-7 text-xl font-semibold text-[var(--foreground)]">
+                  {/* Content */}
+                  <h3 className="mt-7 text-xl font-semibold text-[var(--foreground)] transition-colors duration-300 group-hover:text-[var(--primary)]">
                     {item.title}
                   </h3>
 
                   <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
                     {item.description}
                   </p>
+
+                  {/* Hover Line */}
+                  <div className="absolute bottom-0 left-0 h-px w-0 bg-[var(--primary)] transition-all duration-500 group-hover:w-full" />
                 </article>
-              </Reveal>
+              </SectionReveal>
             );
           })}
         </div>
-
       </div>
     </section>
   );
