@@ -97,7 +97,9 @@ export default function Experience() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-        {/* Header */}
+        {/* =========================
+            SECTION HEADER
+        ========================== */}
         <SectionReveal>
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
 
@@ -130,7 +132,9 @@ export default function Experience() {
           </div>
         </SectionReveal>
 
-        {/* Timeline */}
+        {/* =========================
+            EXPERIENCE TIMELINE
+        ========================== */}
         <div className="relative mt-16">
 
           {/* Timeline Line */}
@@ -153,9 +157,10 @@ export default function Experience() {
                   {/* Experience Card */}
                   <div className="group rounded-2xl border border-[var(--border)] bg-[var(--card)] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--primary)]/50 hover:shadow-[0_14px_45px_rgba(34,197,94,0.06)] sm:p-8">
 
+                    {/* Company Header */}
                     <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
 
-                      {/* Company Info */}
+                      {/* Company Details */}
                       <div>
 
                         {/* Year + Duration */}
@@ -179,14 +184,14 @@ export default function Experience() {
                         </h3>
 
                         {/* Role */}
-                        <p className="mt-1 text-sm text-[var(--primary)]">
+                        <p className="mt-1 text-sm font-medium text-[var(--primary)]">
                           {experience.role}
                         </p>
 
                       </div>
 
                       {/* Experience Icon */}
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--section)] transition-colors group-hover:border-[var(--primary)]/40">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--section)] transition-colors duration-300 group-hover:border-[var(--primary)]/40">
 
                         <BriefcaseBusiness
                           size={19}
@@ -208,7 +213,7 @@ export default function Experience() {
                       {experience.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="rounded-full border border-[var(--border)] bg-[var(--section)] px-3 py-1.5 font-mono text-[10px] text-[var(--muted)] transition-all duration-200 hover:border-[var(--primary)]/50 hover:text-[var(--primary)]"
+                          className="rounded-full border border-[var(--border)] bg-[var(--section)] px-3 py-1.5 font-mono text-[10px] text-[var(--muted)] transition-all duration-200 hover:border-[var(--primary)]/50 hover:bg-[var(--primary)]/[0.04] hover:text-[var(--primary)]"
                         >
                           {skill}
                         </span>
@@ -227,22 +232,30 @@ export default function Experience() {
           </div>
         </div>
 
-        {/* Resume CTA */}
+        {/* =========================
+            RESUME BUTTON
+        ========================== */}
         <SectionReveal delay={0.15}>
           <div className="mt-12">
 
             <a
-              href="/resume"
-              className="group inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--card)] px-5 py-3 font-mono text-xs text-[var(--foreground)] transition-all hover:border-[var(--primary)]/50 hover:text-[var(--primary)]"
+              href="/resume/Petchiraja_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View full resume"
+              className="group inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-[var(--card)] px-5 py-3 font-mono text-xs text-[var(--foreground)] transition-all duration-200 hover:border-[var(--primary)]/50 hover:bg-[var(--primary)]/[0.04] hover:text-[var(--primary)]"
             >
 
-              <CalendarDays size={15} />
+              <CalendarDays
+                size={15}
+                className="transition-transform duration-200 group-hover:scale-105"
+              />
 
               View Full Resume
 
               <ArrowUpRight
                 size={14}
-                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
               />
 
             </a>
