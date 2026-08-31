@@ -239,7 +239,7 @@ export default function Experience() {
           <div className="mt-12">
 
             <a
-              href="/resume/Petchiraja_Resume.pdf"
+              href="/Petchiraja_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View full resume"
